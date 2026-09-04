@@ -1,0 +1,14 @@
+# Archivos compilados y carpetas de caché de Python
+__pycache__/
+*.pyc
+
+# Entornos virtuales (si usas venv o env)
+venv/
+env/
+
+# Archivos de configuración local o variables de entorno (claves secretas)
+.env
+
+# Archivos del sistema operativo o editor
+.DS_Store
+.vscode/
