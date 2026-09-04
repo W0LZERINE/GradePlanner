@@ -4,27 +4,73 @@ class Assignatura:
 
     # CONSTRUCTOR
     def __init__(self,name,ects):
-        self._nombre = name
+        self._name = name
         self._ects = ects
-        self._qualification = {}
+        self._ponderation = {}  # El formato del diccionarios será prueba -> ponderación -> nota
 
     ### METODOS ###
 
-    def set_name(self):
-        pass
-    def set_ects(self):
-        pass
+    def set_name(self,name):
+        self._name = name
+
+    def set_ects(self,ects):
+        self._ects = ects
 
     
     # Los métodos: add_pond y remove_pond metodos privados de la clase para el método edit_pond
     
-    def add_qualification(self,key,val):
-        pass
-    def remove_qualification(self,key):
-        pass
+    def add_ponderetion(self,name, ponderation, grade = None):
+        self._ponderation[name] = { ponderation: grade}
 
-    '''
-        edit_pond permite añadir o eliminar o editar el atributo pond para los diferentes métodos de avaluación
-    '''
-    def edit_qualification(self):
-        pass
+    def remove_ponderation(self,name):
+        del self._ponderation[name]
+
+
+    ###################
+    ### Funciones para el edit_ponderation ###
+    
+    # Muestra todas las ponderaciones
+    def _show_ponderations(self):
+            for name, ponderation in self._ponderation.items():
+                for ponderation_value in ponderation.keys():
+                    print(f"Type : ({name}), ponderation: ({ponderation_value})")
+    
+    # Funcion que devuelve un -1 si hay un valueerror en el input y devuelve el input si no
+    def value_error_control():
+        try: 
+            num = int(input("Selecciona una opción: "))
+        except ValueError:
+            print("Error: no has introducido un valor de tipo int vuelve a intentar.\n")
+            num = -1
+        finally:
+            return num
+
+    #Editar el key
+    def ponderation_option_one(): 
+    ###############
+        
+    def edit_ponderation(self):
+
+        if not self._ponderations:
+            print("No hay ninguna ponderación assignada")
+            return 
+        
+        else:
+            
+            print("EDITAR PONDERACION\n")
+            print("\n\n---------------------\n")
+            print("1.Cambiar tipo de prueba\n2.Cambiar ponderacion de una prueba")
+            print("---------------------\n")
+
+            num = -1
+            while num != (1 or 2):
+                num = self.value_error_control()
+
+
+            # Cambiar la key del diccionario        
+            if num == 1:
+                pass
+            elif num == 2: 
+                pass
+                
+        
