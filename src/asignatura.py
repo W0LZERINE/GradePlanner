@@ -1,5 +1,18 @@
 ### CLASE ASSIGNATURA ###
 
+'''
+Estructura clase Assignatura guardaremos el nombre, los creditos, y los criterios es decir sus ponderaciones: 
+
+name
+ects
+
+diccionario = {nombre de la prueba : {ponderacion : nota} }
+
+Aqui no editaremos las notas, las notas las añadiremos desde otra funcion en el main que ya crearemos
+
+'''
+
+
 class Assignatura:
 
     # CONSTRUCTOR
@@ -10,6 +23,7 @@ class Assignatura:
 
     ### METODOS ###
 
+    #Setters
     def set_name(self,name):
         self._name = name
 
@@ -26,11 +40,11 @@ class Assignatura:
         del self._ponderation[name]
 
 
-    ###################
+    ##################################################################################################################
     ### Funciones para el edit_ponderation ###
     
     # Muestra todas las ponderaciones
-    def _show_ponderations(self):
+    def _show_pond(self):
             for name, ponderation in self._ponderation.items():
                 for ponderation_value in ponderation.keys():
                     print(f"Type : ({name}), ponderation: ({ponderation_value})")
@@ -46,17 +60,22 @@ class Assignatura:
             return num
 
     #Editar el key
-    def ponderation_option_one(): 
-    ###############
-        
-    def edit_ponderation(self):
+    def pond_option_one(): 
+        pass
+    #Editar el valor de la ponderación
+    def pond_option_two():
+        pass
 
+    ##################################################################################################################
+        
+    def edit_pond(self):
+        #comprobamos que no esté vacío el diccionario
         if not self._ponderations:
             print("No hay ninguna ponderación assignada")
             return 
         
         else:
-            
+            #Mostramos menú
             print("EDITAR PONDERACION\n")
             print("\n\n---------------------\n")
             print("1.Cambiar tipo de prueba\n2.Cambiar ponderacion de una prueba")
@@ -66,6 +85,7 @@ class Assignatura:
             while num != (1 or 2):
                 num = self.value_error_control()
 
+            self._show_pond()
 
             # Cambiar la key del diccionario        
             if num == 1:
