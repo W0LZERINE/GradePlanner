@@ -13,7 +13,7 @@ def menu_mostrar_asigntauras(asignaturas):
     print("--- ASIGNATURAS ---")
     if asignaturas:
         for i, asignatura in enumerate(asignaturas):
-                print(f"{i}. {asignatura._name}")
+                print(f"{i}. {asignatura._name.upper()}")
                 print(f"{len(asignaturas)}. Volver al menú principal\n")
         
     else:
@@ -28,13 +28,13 @@ def menu_editar_asignatura():
 
 # ESTE SERVIRA PARA CUANDO RECIVAMOS UN ARRAY DE EVALUACIONES
 def mostrar_menu_evaluaciones(asignatura):
-    print("--- EVALUACIONES ---")
+    print(f"--- EVALUACIONES de la asignatura {(asignatura._name).upper()}---")
 
     if not asignatura._evaluation:
         print("No hay evaluaciones registradas.")
     else:
         for i, evaluacion in enumerate(asignatura._evaluation):
-            print(f"{i}. {asignatura._evaluation}")
+            print(f"{i}. {evaluacion.get_name()} cuenta un {int(evaluacion._ponderation*100) }")
         print(f"{len(asignatura._evaluation)}. Volver al menú principal\n")
 
 def menu_editar_evaluacion():

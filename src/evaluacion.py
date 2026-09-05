@@ -22,6 +22,9 @@ class Evaluacion:
     def set_name(self,name):
         self._name = name
 
+    def get_name(self):
+        return self._name
+    
     def set_ponderation(self,ponderation):
         self._ponderation = ponderation
 

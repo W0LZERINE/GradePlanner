@@ -25,13 +25,12 @@ while True:
         case 0: #En esta opcion pondremos que imprima la asignatura con la nota media que lleva de momento
             menu_mostrar_asigntauras(asignaturas)
             if  asignaturas:
-                print("Selecciona la asignatura o volver al menu: ")
                 select = input_with_control()
 
                 if select != len(asignaturas):
                     mostrar_menu_evaluaciones(asignaturas[select])
-                print("para salir introduzca una tecla: ")
-                input("")# esto es para esperar a que toque una
+                    print("Para salir de este menu introduzca una tecla: ")
+                    input("")# esto es para esperar a que toque una
             
         case 1:
             pass
