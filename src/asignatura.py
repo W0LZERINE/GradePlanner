@@ -16,7 +16,7 @@ from evaluacion import *
 class Asignatura:
 
     # CONSTRUCTOR
-    def __init__(self,name,ects,evaluation):
+    def __init__(self,name,ects):
         self._name = name
         self._ects = ects
         self._evaluation = []

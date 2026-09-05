@@ -1,4 +1,5 @@
 
+
 def menu_base():
     print("--- GRADE PLANNER ---")
     print("0. Ver asignaturas y notas")
@@ -10,12 +11,13 @@ def menu_base():
 def menu_mostrar_asigntauras(asignaturas):
     
     print("--- ASIGNATURAS ---")
-    if not asignaturas:
-        print("No hay asignaturas registradas.")
-    else:
+    if asignaturas:
         for i, asignatura in enumerate(asignaturas):
-            print(f"{i}. {asignatura}")
-        print(f"{len(asignaturas)}. Volver al menú principal\n")
+                print(f"{i}. {asignatura._name}")
+                print(f"{len(asignaturas)}. Volver al menú principal\n")
+        
+    else:
+        print("No hay asignaturas registradas.")
 
 
 def menu_editar_asignatura():
@@ -31,9 +33,9 @@ def mostrar_menu_evaluaciones(asignatura):
     if not asignatura._evaluation:
         print("No hay evaluaciones registradas.")
     else:
-        for i, evaluacion in enumerate(evaluaciones):
-            print(f"{i}. {evaluacion}")
-        print(f"{len(evaluaciones)}. Volver al menú principal\n")
+        for i, evaluacion in enumerate(asignatura._evaluation):
+            print(f"{i}. {asignatura._evaluation}")
+        print(f"{len(asignatura._evaluation)}. Volver al menú principal\n")
 
 def menu_editar_evaluacion():
     print("--- EDITAR DETALLES DE EVALUACIÓN ---")

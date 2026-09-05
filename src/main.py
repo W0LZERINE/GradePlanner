@@ -5,9 +5,11 @@ from evaluacion import *
 
 
 ##Aqui irá la carga del fichero:
-evaluation = Evaluacion("Examen", 1, 10)
+e = Evaluacion("Examen", 1.0, 10)
 #Cómo no hay fichero de momento hacemos que asignaturas esté vació
-a = Asignatura("Mates", 6, evaluation)
+a = Asignatura("Mates", 6)
+
+a.add_evaluation(e)
 
 asignaturas = [a]
 
@@ -23,15 +25,13 @@ while True:
         case 0: #En esta opcion pondremos que imprima la asignatura con la nota media que lleva de momento
             menu_mostrar_asigntauras(asignaturas)
             if  asignaturas:
-                print("Selecciona la asignatura que quieras ver sus evaluaciones o escribe -1 para volver")
+                print("Selecciona la asignatura o volver al menu: ")
                 select = input_with_control()
-                if select == -1:
-                    break
-                else:
+
+                if select != len(asignaturas):
                     mostrar_menu_evaluaciones(asignaturas[select])
-            
-            print("para salir introduzca una tecla")
-            input("")# esto es para esperar a que toque una
+                print("para salir introduzca una tecla: ")
+                input("")# esto es para esperar a que toque una
             
         case 1:
             pass
