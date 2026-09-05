@@ -13,7 +13,7 @@ Aqui no editaremos las notas, las notas las añadiremos desde otra funcion en el
 '''
 from evaluacion import *
 
-class Assignatura:
+class Asignatura:
 
     # CONSTRUCTOR
     def __init__(self,name,ects,evaluation):

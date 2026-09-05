@@ -8,15 +8,14 @@ class Evaluacion:
 
     ###Constructores###
 
-    def __init__(self, name, mark, ponderation):
+    def __init__(self, name, ponderation, mark):
         self._name = name
-        self._mark = mark
         self._ponderation = ponderation
+        if mark == None:
+            self._mark = -1
+        else:
+            self._mark = mark
 
-    def __init__(self,name,ponderation):
-        self._name = name
-        self._ponderation = ponderation
-        self._mark = -1 # ponemos -1 si no hay nota
 
 
     ### Setters

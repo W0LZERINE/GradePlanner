@@ -1,7 +1,7 @@
 
 def menu_base():
     print("--- GRADE PLANNER ---")
-    print("0. Ver asignaturas")
+    print("0. Ver asignaturas y notas")
     print("1. Editar asignaturas")
     print("2. Añadir/Eliminar asignaturas")
     print("3. Salir\n")
@@ -25,10 +25,10 @@ def menu_editar_asignatura():
     print("2. Volver al menú principal\n")
 
 # ESTE SERVIRA PARA CUANDO RECIVAMOS UN ARRAY DE EVALUACIONES
-def mostrar_menu_evaluaciones(evaluaciones):
+def mostrar_menu_evaluaciones(asignatura):
     print("--- EVALUACIONES ---")
 
-    if not evaluaciones:
+    if not asignatura._evaluation:
         print("No hay evaluaciones registradas.")
     else:
         for i, evaluacion in enumerate(evaluaciones):

@@ -1,5 +1,6 @@
 ### CLASE EXPEDIENTE ###
-from expediente import *
+from asignatura import *
+
 
 class Expediente:
     def __init__(self,name):
