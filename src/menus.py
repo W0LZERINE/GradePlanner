@@ -17,7 +17,8 @@ def menu_mostrar_asigntauras(asignaturas):
                 print(f"{len(asignaturas)}. Volver al menú principal\n")
         
     else:
-        print("No hay asignaturas registradas.")
+        print("No hay asignaturas registradas.\nIntroduce cualquier tecla para volver")
+        input()
 
 
 def menu_editar_asignatura():
@@ -31,10 +32,11 @@ def mostrar_menu_evaluaciones(asignatura):
     print(f"--- EVALUACIONES de la asignatura {(asignatura._name).upper()}---")
 
     if not asignatura._evaluation:
-        print("No hay evaluaciones registradas.")
+        print(f"No hay evaluaciones registradas para la asignatura {asignatura._name.upper()}.\nIntroduce cualquier tecla para volver")
+        input()
     else:
         for i, evaluacion in enumerate(asignatura._evaluation):
-            print(f"{i}. {evaluacion.get_name()} cuenta un {int(evaluacion._ponderation*100) }")
+            print(f"{i}. {evaluacion._name} cuenta un {int(evaluacion._ponderation*100) }")
         print(f"{len(asignatura._evaluation)}. Volver al menú principal\n")
 
 def menu_editar_evaluacion():
@@ -60,9 +62,10 @@ def exit():
 
 
 def input_with_control():
-    try:
-        opcion = int(input("Selecciona una opción válida: "))
-    except ValueError:
-        print("Error no has seleccionado una opción válida")
-    else:
-        return opcion
+    while True:
+        try:
+            opcion = int(input("Selecciona una opción válida: "))
+        except ValueError:
+            print("Error has seleccionado una opción NO válida")
+        else:
+            return opcion

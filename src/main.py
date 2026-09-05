@@ -5,11 +5,11 @@ from evaluacion import *
 
 
 ##Aqui irá la carga del fichero:
-e = Evaluacion("Examen", 1.0, 10)
+#e = Evaluacion("Examen", 1.0, 10)
 #Cómo no hay fichero de momento hacemos que asignaturas esté vació
 a = Asignatura("Mates", 6)
 
-a.add_evaluation(e)
+#a.add_evaluation(e)
 
 asignaturas = [a]
 
@@ -27,10 +27,11 @@ while True:
             if  asignaturas:
                 select = input_with_control()
 
-                if select != len(asignaturas):
+            if select != len(asignaturas):
+                if 0 <= select < len(asignaturas):
                     mostrar_menu_evaluaciones(asignaturas[select])
-                    print("Para salir de este menu introduzca una tecla: ")
-                    input("")# esto es para esperar a que toque una
+                else:
+                    print("Error: Esa asignatura no existe.")
             
         case 1:
             pass
