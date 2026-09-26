@@ -1,12 +1,11 @@
 ### CLASE ASSIGNATURA ###
 
 '''
-Estructura clase Assignatura guardaremos el nombre, los creditos, y un objeto que sea avaluación, dónde iran las notas  
-
-name
-ects
-
-Evaluacion : objeto que guarda notas
+Estructura clase Assignatura guardaremos el nombre, los creditos, y un objeto que sea evaluacion, dónde iran las notas  
+Atributos:
+    name
+    ects
+    Evaluacion : objeto que guarda notas
 
 Aqui no editaremos las notas, las notas las añadiremos desde otra funcion en el main que ya crearemos
 
@@ -21,7 +20,7 @@ class Asignatura:
         self._ects = ects
         self._evaluation = []
         
-########################################################
+
     
 
     ###Setters###
@@ -31,17 +30,16 @@ class Asignatura:
     def set_ects(self,ects):
         self._ects = ects
 
-########################################################
+
 
 ### METODOS ###
 
     def add_evaluation(self,evaluation):
         self._evaluation.append(evaluation)
 
-    def remove_evaluation(self,name):
+    def remove_evaluation(self,input):
             try:
-                self._evaluation.remove(name)
+                self._evaluation.remove(input)
             except ValueError:
                 print("Error: no existe un elemento con ese nombre.\n")
 
-## Debe de haber dos edit uno para arrays y otro para objetos solos

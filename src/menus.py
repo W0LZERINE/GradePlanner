@@ -8,7 +8,7 @@ def menu_base():
     print("3. Salir\n")
 
 
-def menu_mostrar_asigntauras(asignaturas):
+def menu_mostrar_asignaturas(asignaturas):
     
     print("--- ASIGNATURAS ---")
     if asignaturas:
@@ -21,7 +21,7 @@ def menu_mostrar_asigntauras(asignaturas):
         input()
 
 
-def menu_editar_asignatura():
+def menu_editar_asignatura(asignatura):
     print("--- EDITAR ASIGNATURA ---")
     print("0. Editar Nombre")
     print("1. Editar Evaluaciones")

@@ -23,7 +23,7 @@ while True:
 
     match opcion :
         case 0: #En esta opcion pondremos que imprima la asignatura con la nota media que lleva de momento
-            menu_mostrar_asigntauras(asignaturas)
+            menu_mostrar_asignaturas(asignaturas)
             if  asignaturas:
                 select = input_with_control()
 
@@ -33,7 +33,36 @@ while True:
                 else:
                     print("Error: Esa asignatura no existe.")
             
-        case 1:
+        case 1: # Esta es la opción para Editar una asignatura
+            print("¿Qué asignatura quieres editar?")
+            menu_mostrar_asignaturas(asignaturas)
+
+            # Si hay asignaturas a mostrar puede escoger
+            if asignaturas:
+                select = input_with_control()
+
+            if select != len(asignaturas):
+                if 0 <= select < len(asignaturas):
+                    menu_editar_asignatura()
+                else:
+                    print("Error: Esa asignatura no existe")
+
+            select = input_with_control()
+
+            if select > 2 or select < 2:
+                break
+
+            match select:
+                case 1:
+                    pass
+                case 2:
+                    pass
+                case 3:
+                    pass
+
+            
+
+            
             pass
 
         case 2:
